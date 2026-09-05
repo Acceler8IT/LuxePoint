@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LuxePoint Suites — professional accommodation partnerships across Melbourne.">
+  <meta name="theme-color" content="#0B1F33">
+  <title>LuxePoint Suites | Coming Soon</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --midnight: #0B1F33;
+      --gold: #C8A96A;
+      --ivory: #F8F5EF;
+      --charcoal: #333333;
+      --white: #FFFFFF;
+      --muted: #B9C2CA;
+      --line: rgba(248,245,239,.16);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--midnight);
+      background: var(--ivory);
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      min-height: 88px;
+      padding: 14px clamp(24px, 5vw, 76px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      background: var(--ivory);
+      border-bottom: 1px solid rgba(11,31,51,.08);
+    }
+
+    .logo {
+      display: block;
+      width: min(255px, 48vw);
+      height: auto;
+      mix-blend-mode: multiply;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 42px);
+    }
+
+    nav a {
+      color: var(--midnight);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .nav-button, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--midnight);
+      border: 0;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 16px 23px;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      min-height: calc(100vh - 88px);
+    }
+
+    .copy {
+      position: relative;
+      overflow: hidden;
+      background: var(--midnight);
+      color: var(--ivory);
+      display: flex;
+      align-items: center;
+      padding: clamp(50px, 8vw, 105px);
+    }
+
+    .copy::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      right: -230px;
+      top: -160px;
+      border: 1px solid rgba(200,169,106,.22);
+      border-radius: 50%;
+    }
+
+    .copy::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      right: -80px;
+      top: -60px;
+      border: 1px solid rgba(248,245,239,.07);
+      border-radius: 50%;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(48px, 6.2vw, 84px);
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+
+    .gold-rule {
+      width: 68px;
+      height: 1px;
+      background: var(--gold);
+      margin: 29px 0;
+    }
+
+    .lead {
+      max-width: 560px;
+      color: #D6DDE2;
+      font-size: 15px;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 34px;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ivory);
+      border: 1px solid rgba(248,245,239,.55);
+    }
+
+    .contact-line {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      color: #B8C2CA;
+      font-size: 12px;
+    }
+
+    .contact-line a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .visual {
+      position: relative;
+      min-height: 620px;
+      background:
+        linear-gradient(135deg, rgba(11,31,51,.14), rgba(11,31,51,.48)),
+        radial-gradient(circle at 70% 25%, rgba(200,169,106,.35), transparent 24%),
+        linear-gradient(145deg, #C6B7A4 0%, #7B736C 36%, #1C2D3D 67%, #0B1F33 100%);
+      overflow: hidden;
+    }
+
+    .visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 0 18%, rgba(255,255,255,.14) 18.1% 18.5%, transparent 18.6% 48%, rgba(255,255,255,.13) 48.1% 48.5%, transparent 48.6% 73%, rgba(255,255,255,.12) 73.1% 73.5%, transparent 73.6%),
+        linear-gradient(0deg, rgba(11,31,51,.6), transparent 46%);
+    }
+
+    .city {
+      position: absolute;
+      inset: auto 0 0;
+      height: 42%;
+      background:
+        linear-gradient(180deg, transparent, rgba(5,17,28,.72)),
+        repeating-linear-gradient(90deg, transparent 0 42px, rgba(255,255,255,.08) 43px 45px),
+        linear-gradient(180deg, #314455, #101E2B);
+      clip-path: polygon(0 48%, 6% 38%, 10% 54%, 15% 31%, 20% 45%, 25% 22%, 29% 43%, 34% 13%, 39% 40%, 44% 25%, 50% 45%, 56% 20%, 61% 40%, 67% 7%, 72% 39%, 77% 27%, 82% 44%, 88% 18%, 93% 37%, 100% 28%, 100% 100%, 0 100%);
+    }
+
+    .window {
+      position: absolute;
+      inset: 10% 10% auto auto;
+      width: 46%;
+      height: 54%;
+      border: 1px solid rgba(255,255,255,.23);
+      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(11,31,51,.24));
+      box-shadow: inset 0 0 60px rgba(0,0,0,.2);
+    }
+
+    .window::before, .window::after {
+      content: "";
+      position: absolute;
+      background: rgba(255,255,255,.2);
+    }
+    .window::before { width: 1px; top: 0; bottom: 0; left: 50%; }
+    .window::after { height: 1px; left: 0; right: 0; top: 50%; }
+
+    .visual-card {
+      position: absolute;
+      left: clamp(24px, 5vw, 70px);
+      bottom: clamp(26px, 6vw, 72px);
+      max-width: 310px;
+      padding: 24px;
+      background: rgba(11,31,51,.9);
+      border: 1px solid rgba(200,169,106,.5);
+      color: var(--ivory);
+    }
+
+    .visual-card strong {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .visual-card span {
+      color: #C5CDD2;
+      font-size: 11px;
+      line-height: 1.65;
+    }
+
+    footer {
+      background: var(--midnight);
+      color: #C2CBD1;
+      border-top: 1px solid var(--line);
+      padding: 18px clamp(24px, 5vw, 76px);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      header { min-height: 74px; }
+      nav a:not(.nav-button) { display: none; }
+      main { grid-template-columns: 1fr; min-height: auto; }
+      .copy { min-height: 68vh; }
+      .visual { min-height: 420px; }
+    }
+
+    @media (max-width: 560px) {
+      header { padding: 12px 18px; }
+      .logo { width: 220px; }
+      .nav-button { padding: 13px 14px; font-size: 9px; }
+      .copy { padding: 54px 25px; }
+      h1 { font-size: clamp(43px, 13vw, 62px); }
+      .lead { font-size: 14px; }
+      .actions { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+      .visual { min-height: 360px; }
+      footer { flex-direction: column; text-align: center; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a href="#" aria-label="LuxePoint Suites">
+        <img class="logo" src="luxepoint-logo.png" alt="LuxePoint Suites">
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#owners">For Owners</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#about">About</a>
+        <a href="#properties">Properties</a>
+        <a class="nav-button" href="mailto:hello@luxepoint.com.au?subject=Owner%20Proposal">Request Owner Proposal</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="copy" id="owners">
+        <div class="content">
+          <div class="eyebrow">Melbourne Accommodation</div>
+          <h1>Professional<br>Accommodation<br>Partnerships</h1>
+          <div class="gold-rule"></div>
+          <p class="lead">
+            A trusted, long-term tenant for Melbourne property owners.
+            Premium accommodation for discerning guests, with thoughtful
+            property care and professional communication.
+          </p>
+          <div class="actions">
+            <a class="button" href="mailto:hello@luxepoint.com.au?subject=Owner%20Proposal">Request Owner Proposal&nbsp; →</a>
+            <a class="button secondary" href="#approach">For Property Owners</a>
+          </div>
+          <div class="contact-line">
+            <a href="mailto:hello@luxepoint.com.au">hello@luxepoint.com.au</a>
+            <a href="tel:+61390880838">03 9088 0838</a>
+            <span>Melbourne, Australia</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="visual" id="properties" aria-label="LuxePoint visual">
+        <div class="window"></div>
+        <div class="city"></div>
+        <div class="visual-card">
+          <strong>Something exceptional is coming.</strong>
+          <span>LuxePoint Suites is preparing to launch a refined accommodation partnership experience across Melbourne.</span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 LuxePoint Suites</span>
+      <span>www.luxepoint.com.au</span>
+    </footer>
+  </div>
+</body>
+</html>
